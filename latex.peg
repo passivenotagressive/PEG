@@ -1,0 +1,8 @@
+grammar Latex
+    S <- N1:N K N2:N <SNode1> 
+    K <- A N D <KNode> / A D <KNode1>
+    A <- M B A <ANode1> / M "#" <ANode2>
+    B <- "|" B <BNode1> / "|" <BNode2>
+    D <- A N D <DNode2> / A <DNode1> 
+    N <- [-]* <NNode> 
+    M <- [A-Za-z0-9" "]*  <MNode>
